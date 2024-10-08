@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk 2077 Lifepaths</title>
+    <link rel="stylesheet" href="cyberpunk-styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #0ff;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #111;
+            color: #0ff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0ff 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            text-align: center;
+            font-size: 3em;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #0ff;
+        }
+        .intro {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .lifepath {
+            margin-bottom: 40px;
+            border: 1px solid #0ff;
+            padding: 20px;
+            background: rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+        .lifepath h2 {
+            color: #f0f;
+            border-bottom: 2px solid #f0f;
+            padding-bottom: 10px;
+            text-shadow: 0 0 5px #f0f;
+        }
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+
+        }
+        .gallery img {
+            width: 30%;
+            margin-bottom: 10px;
+            border: 2px solid #0ff;
+        }
+        footer {
+            background: #111;
+            color: #0ff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+       
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Cyberpunk 2077 Lifepaths</h1>
+    </header>
+
+    <div class="container">
+        <p class="intro">
+            In Cyberpunk 2077, your character's backstory is determined by your choice of lifepath. Each lifepath offers a unique starting point and influences your journey through Night City.
+        </p>
+
+        <div class="lifepath">
+            <h2>Street Kid</h2>
+            <p>Born and raised in Night City's streets, you know them like the back of your hand. You've seen it all, from the glittering skyscrapers to the grimy back alleys.</p>
+            <p>As a Street Kid, you have a deep understanding of the city's underworld and its complex social dynamics. Your connections and street smarts give you an edge in navigating the dangerous waters of Night City.</p>
+            <p>Your journey begins in the heart of Heywood, where you're caught up in a job gone wrong. Your intimate knowledge of the streets and its people will be your greatest asset as you climb the ranks of Night City's criminal underworld.</p>
+            <div class="gallery">
+                <img src="Street_kid.jpg" alt="Street Kid Character">
+                <img src="Street_kid_Env.jpg" alt="Street Kid Environment">
+                <img src="Street_kid_Action.jpg" alt="Street Kid Action">
+            </div>
+        </div>
+
+        <div class="lifepath">
+            <h2>Nomad</h2>
+            <p>You're a child of the Badlands, born into a nomad clan that roams the vast deserts surrounding Night City. You've lived a life of freedom, but also one of hardship and constant movement.</p>
+            <p>As a Nomad, you bring a unique outsider's perspective to Night City. Your experience with machines and your strong family ties set you apart from the city-born inhabitants.</p>
+            <p>Your story begins as you're about to embark on a risky smuggling run into Night City. Your survival skills and adaptability will be put to the test as you navigate the unfamiliar urban jungle.</p>
+            <div class="gallery">
+                <img src="Nomad.jpg" alt="Nomad Character">
+                <img src="Nomad_Env.jpg" alt="Nomad Environment">
+                <img src="Nomad_Action.jpg" alt="Nomad Action">
+            </div>
+        </div>
+
+        <div class="lifepath">
+            <h2>Corpo</h2>
+            <p>You've climbed the corporate ladder and know the cutthroat world of big business in Night City. As a corporate executive for Arasaka, you've seen the inner workings of one of the most powerful megacorporations in the world.</p>
+            <p>As a Corpo, you possess insider knowledge of corporate politics and have access to high-level resources. Your understanding of power dynamics and corporate espionage gives you a unique advantage.</p>
+            <p>Your journey begins in the towering offices of Arasaka, where a high-stakes power play goes terribly wrong. Your corporate background will be both a blessing and a curse as you navigate the dangerous world outside the corporate bubble.</p>
+            <div class="gallery">
+                <img src="Corpo.jpg" alt="Corpo Character">
+                <img src="Corpo_Env.jpg" alt="Corpo Environment">
+                <img src="Corpo_Action.jpg" alt="Corpo Action">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cyberpunk 2077 Fan Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+       
+
+        setInterval(draw, 33);
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
