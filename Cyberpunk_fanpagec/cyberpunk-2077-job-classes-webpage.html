@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk 2077 Job Classes</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #0ff;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #111;
+            color: #0ff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0ff 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            text-align: center;
+            font-size: 3em;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #0ff;
+        }
+        .intro {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .job-class {
+            margin-bottom: 40px;
+            border: 1px solid #0ff;
+            padding: 20px;
+            background: rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+        .job-class h2 {
+            color: #f0f;
+            border-bottom: 2px solid #f0f;
+            padding-bottom: 10px;
+            text-shadow: 0 0 5px #f0f;
+        }
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 30%;
+            margin-bottom: 10px;
+            border: 2px solid #0ff;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #111;
+            color: #0ff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #glitchCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .gallery img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="glitchCanvas"></canvas>
+    <header>
+        <h1>Cyberpunk 2077 Job Classes</h1>
+    </header>
+
+    <div class="container">
+        <p class="intro">
+            In the neon-lit streets of Night City, your skills define your survival. Cyberpunk 2077 offers three distinct job classes, each with its own unique playstyle and advantages. Choose your path and leave your mark on the city.
+        </p>
+
+        <div class="job-class">
+            <h2>Netrunner</h2>
+            <p>Masters of the digital realm, Netrunners are the hackers and cybersecurity experts of Night City. They can manipulate electronics, breach security systems, and even hack into human cybernetics.</p>
+            <p>As a Netrunner, you'll rely on your Intelligence attribute and hacking skills to overcome obstacles. You can disable security cameras, turn enemy weapons against them, or extract valuable data from secure networks.</p>
+            <p>Your playground is the cyberspace, where you can infiltrate corporate systems, manipulate the city's infrastructure, and uncover hidden secrets. In combat, you're a ghost in the machine, disabling enemies before they even know you're there.</p>
+            <div class="gallery">
+                <img src="/api/placeholder/400/300" alt="Netrunner Character">
+                <img src="/api/placeholder/400/300" alt="Netrunner Hacking">
+                <img src="/api/placeholder/400/300" alt="Netrunner in Cyberspace">
+            </div>
+        </div>
+
+        <div class="job-class">
+            <h2>Solo</h2>
+            <p>The muscle of Night City, Solos are combat specialists and mercenaries. They excel in direct confrontation, whether it's with fists, blades, or firearms.</p>
+            <p>As a Solo, your Body and Reflexes attributes are key. You can customize your character with cybernetic enhancements to increase your combat effectiveness, from reinforced skeletal structures to enhanced sensory implants.</p>
+            <p>In the dangerous streets of Night City, you're the front-line fighter. Whether you prefer stealthy takedowns or all-out assaults, your combat skills make you a force to be reckoned with in any confrontation.</p>
+            <div class="gallery">
+                <img src="/api/placeholder/400/300" alt="Solo Character">
+                <img src="/api/placeholder/400/300" alt="Solo in Combat">
+                <img src="/api/placeholder/400/300" alt="Solo Cybernetic Enhancements">
+            </div>
+        </div>
+
+        <div class="job-class">
+            <h2>Techie</h2>
+            <p>The problem-solvers and innovators, Techies are experts in crafting, engineering, and understanding the inner workings of Night City's technology.</p>
+            <p>As a Techie, your Technical Ability is your most valuable asset. You can craft and upgrade weapons and equipment, repair machinery, and even create your own unique gadgets to give you an edge in various situations.</p>
+            <p>In Night City, you're the go-to person for all things tech. Whether it's modifying vehicles, hacking complex systems, or creating cutting-edge cyberware, your technical expertise allows you to approach problems from unique angles.</p>
+            <div class="gallery">
+                <img src="/api/placeholder/400/300" alt="Techie Character">
+                <img src="/api/placeholder/400/300" alt="Techie Crafting">
+                <img src="/api/placeholder/400/300" alt="Techie with Gadgets">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cyberpunk 2077 Fan Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Cyberpunk 2077 Code Glitch Effect
+        const canvas = document.getElementById('glitchCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+{}[]|;:,.<>?';
+        const fontSize = 10;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0f0';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
